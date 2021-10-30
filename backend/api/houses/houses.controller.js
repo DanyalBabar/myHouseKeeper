@@ -39,15 +39,6 @@ export default class housesController {
       const founderName = req.body.founderName;
       const founderEmail = req.body.founderEmail;
 
-      console.log("Creating house...");
-      console.log({
-        newHouseID,
-        houseName,
-        houseCode,
-        founderName,
-        founderEmail,
-      });
-
       const createResponse = await housesDAO.createHouse(
         newHouseID,
         houseName,
@@ -236,8 +227,6 @@ export default class housesController {
   static async apiDeleteHouse(req, res, next) {
     try {
       const houseID = req.body.houseID;
-
-      console.log("DELETE: " + houseID + " ");
 
       const deleteResponse = await housesDAO.deleteHouse(houseID);
 

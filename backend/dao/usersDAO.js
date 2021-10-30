@@ -18,32 +18,6 @@ export default class usersDAO {
     }
   }
 
-  // // GET ALL
-  // static async getAllUsers() {
-  //   let cursor;
-
-  //   try {
-  //     cursor = await users.find({});
-  //   } catch (e) {
-  //     console.error(`Unable to issue find command, ${e}`);
-  //     return { users: [], totalNumUser: 0 };
-  //   }
-
-  //   const displayCursor = cursor;
-
-  //   try {
-  //     const userList = await displayCursor.toArray();
-  //     const totalNumUsers = await users.countDocuments({});
-
-  //     return { userList, totalNumUsers };
-  //   } catch (e) {
-  //     console.error(
-  //       `Unable to convert cursor to array or problem counting documents, ${e}`
-  //     );
-  //     return { userList: [], totalNumUsers: 0 };
-  //   }
-  // }
-
   // GET
   static async getUser(userID) {
     let query = {
@@ -75,7 +49,6 @@ export default class usersDAO {
 
   // CREATE
   static async createUser(userID, name, email) {
-    console.log("creating...");
     try {
       const newUserDoc = {
         userID: userID,
@@ -96,14 +69,6 @@ export default class usersDAO {
     try {
       let i = 0;
 
-      console.log({
-        userID,
-        houses,
-        houseID,
-        houseEnabled,
-        deleteHouse,
-      });
-
       for (i; i < houses.length; i++) {
         if (houses[i].houseID === houseID) {
           break;
@@ -121,9 +86,6 @@ export default class usersDAO {
         houses[i].enabled = houseEnabled;
       }
 
-      console.log("House LIST");
-      console.log(houses);
-      
       let updatedUser = {
         $set: {},
       };

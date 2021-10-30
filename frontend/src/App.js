@@ -1,5 +1,4 @@
 import React from "react";
-// import { Container } from "react-bootstrap";
 import { AuthProvider } from "./contexts/AuthContext.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -16,21 +15,7 @@ import MainPage from "./pages/MainPage.js";
 function App() {
   return (
     <>
-      {/* <Container
-        className="align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
-      > */}
-      <div
-        className="min-h-screen"
-        // className="w-100"
-        // style={{
-        //   display: "flex",
-        //   justifyContent: "center",
-        //   alignItems: "center",
-        //   padding: "5vh",
-        //   flexDirection: "column",
-        // }}
-      >
+      <div className="min-h-screen">
         <Router>
           <AuthProvider>
             <Switch>
@@ -40,17 +25,6 @@ function App() {
                 path="/update-profile"
                 component={UpdateProfile}
               />
-              {/* <PrivateRoute exact path="/settings" component={Settings} /> */}
-              <PrivateRoute
-                exact
-                path="/update-password"
-                component={UpdatePassword}
-              />
-              <PrivateRoute
-                exact
-                path="/update-email"
-                component={UpdateEmail}
-              />
               <Route path="/signup" component={Signup} />
               <Route path="/login" component={Login} />
               <Route path="/forgot-password" component={ForgotPassword} />
@@ -58,7 +32,6 @@ function App() {
           </AuthProvider>
         </Router>
       </div>
-      {/* </Container> */}
     </>
   );
 }

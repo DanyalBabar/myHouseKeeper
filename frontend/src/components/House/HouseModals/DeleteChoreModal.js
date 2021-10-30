@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { Modal, ModalBody } from "react-bootstrap";
 import Button from "../../Button";
 import LoadOverlay from "../../LoadOverlay";

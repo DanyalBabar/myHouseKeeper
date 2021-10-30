@@ -16,8 +16,6 @@ class UserDataService {
   }
 
   modifyUser(uuid, houses, houseID, houseEnabled, deleteHouse) {
-    console.log(houses);
-
     const body = {
       userID: uuid,
       houses: encodeURIComponent(JSON.stringify(houses)),

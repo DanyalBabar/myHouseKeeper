@@ -37,7 +37,6 @@ export default function UpdateEmail() {
 
     reauthenticate(currentUser.email, currPassword.current.value)
       .then(() => {
-        console.log("got it");
 
         updateEmail(newEmailRef.current.value)
           .then(() => {

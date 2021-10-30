@@ -133,7 +133,6 @@ export default class usersDAO {
   static async triggerSchedule(houseID, chore, days) {
     async function rotateChore(houseID, chore) {
       try {
-        console.log("Moving forward");
         // Get current assignee
         const currAssignee = chore.rotation.assignee;
 
@@ -191,8 +190,6 @@ export default class usersDAO {
       rotateChore(houseID, chore);
     });
 
-    // console.log(something.pendingInvocations[0].job.pendingInvocations[0]);
-
     return { error: "" };
   }
 
@@ -205,15 +202,6 @@ export default class usersDAO {
     editRotation,
     deleteChore
   ) {
-    console.log({
-      houseID,
-      choresList,
-      chore,
-      completeChore,
-      editRotation,
-      deleteChore,
-    });
-
     try {
       let i = 0;
       for (i; i < choresList.length; i++) {
@@ -298,7 +286,6 @@ export default class usersDAO {
 
         // A payer is updating their 'paid' status
         else {
-          console.log(expensesList);
           for (let j = 0; j < expensesList[i].payers.length; j++) {
             if (expense.payers[j].email === expenseToggler) {
               expensesList[i].payers[j].paid = !expensesList[i].payers[j].paid;

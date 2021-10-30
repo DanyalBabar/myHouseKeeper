@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Form, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import houseLogo from "../../assets/logo_house.png";
 import Button from "../../components/Button";
 
@@ -13,6 +13,7 @@ export default function ForgotPassword() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const history = useHistory();
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -34,7 +35,9 @@ export default function ForgotPassword() {
     <>
       <div className="flex flex-col lg:flex-row justify-between items-center px-4 py-3 ">
         <div className="flex flex-row items-center mb-4 lg:mb-0">
-          <img className="w-20 lg:w-14" src={houseLogo} />
+          <button onClick={() => history.push("./")}>
+            <img className="w-16 xl:w-14" src={houseLogo} />
+          </button>
           <text className="font-title font-semibold text-black ml-3 text-3xl ">
             my<text className="text-primary-600">HouseKeeper</text>
           </text>
@@ -46,7 +49,7 @@ export default function ForgotPassword() {
         </text>
       </div>
 
-      <div className="flex flex-col justify-center self-center items-center mt-8 lg:mt-0">
+      <div className="flex flex-col justify-center self-center items-center mt-8 lg:mt-0 mb-8">
         <Card className="border-gray-200 border w-80 lg:w-96 p-2 rounded-lg shadow-md">
           <Card.Body className="font-title">
             <text className="font-title font-semibold text-2xl text-center text-primary-600">

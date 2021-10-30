@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Modal, ModalBody, ModalDialog } from "react-bootstrap";
+import { Modal, ModalBody } from "react-bootstrap";
 import Button from "../../Button";
 import LoadOverlay from "../../LoadOverlay";
 import { IoIosCopy } from "react-icons/io";

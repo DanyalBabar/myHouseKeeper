@@ -36,9 +36,6 @@ export default class usersController {
       const name = req.body.name;
       const email = req.body.email;
 
-      // console.log(newUserID);
-      // console.log(name);
-
       const createResponse = await usersDAO.createUser(newUserID, name, email);
 
       res.json({ status: "Success." });
@@ -51,7 +48,6 @@ export default class usersController {
   // UPDATE
   static async apiUpdateUser(req, res, next) {
     try {
-      console.log(req.body.houses);
       const userID = req.body.userID;
       const houses =
         req.body.houses === ""
@@ -61,8 +57,6 @@ export default class usersController {
       const houseEnabled = req.body.enabled === "true";
       const deleteHouse = req.body.deleteHouse === "true";
 
-      console.log("Updating user house list...");
-
       const updateResponse = await usersDAO.updateUser(
         userID,
         houses,
@@ -71,18 +65,12 @@ export default class usersController {
         deleteHouse
       );
 
-      console.log(2);
-
       var { error } = updateResponse;
-
-      console.log(3);
 
       if (error) {
         res.status(400).json({ error });
         console.log(error.message);
       }
-
-      console.log(4);
 
       if (updateResponse.modifiedCount === 0) {
         throw new Error(
@@ -101,8 +89,6 @@ export default class usersController {
   static async apiDeleteUser(req, res, next) {
     try {
       const userID = req.body.userID;
-
-      console.log("DELETE: " + userID + " ");
 
       const deleteResponse = await usersDAO.deleteUser(userID);
 

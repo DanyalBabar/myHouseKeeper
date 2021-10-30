@@ -32,22 +32,17 @@ export default function MainPage() {
     let memberName = currentUser.displayName;
     let memberEmail = currentUser.email;
     let deleteMember = "false";
-    console.log("here", houseCode);
 
     await HouseDataService.getHouse("", houseCode).then(async (resp) => {
-      console.log(JSON.stringify(resp.data));
       const houseID = resp.data.house.houseID;
       const members = resp.data.house.members;
-      console.log(members, { name: memberName, email: memberEmail });
 
       for (let i = 0; i < members.length; i++) {
         if (members[i].email === memberEmail) {
-          console.log("THROWING");
           throw "You are already in this house";
         }
       }
 
-      console.log("here too");
       await HouseDataService.modifyMembers(
         houseID,
         members,
@@ -70,8 +65,6 @@ export default function MainPage() {
     });
 
     await fetchUserData();
-    //modifyUser(uuid, houses, houseID, houseEnabled, deleteHouse) {
-    console.log("refetching data...");
   };
 
   const leaveHouse = async (houseID) => {
@@ -104,12 +97,9 @@ export default function MainPage() {
     });
 
     await fetchUserData();
-    //modifyUser(uuid, houses, houseID, houseEnabled, deleteHouse) {
-    console.log("refetching data...");
   };
 
   const createHouse = async (houseName) => {
-    console.log("creating house... with name " + houseName);
     let houseID = uuidv4();
     let houseCode = uuidv4();
     let founderName = currentUser.displayName;
@@ -132,8 +122,6 @@ export default function MainPage() {
     });
 
     await fetchUserData();
-
-    console.log("Done refetching");
   };
 
   const addChore = async (houseID, choresList, chore) => {
@@ -190,8 +178,6 @@ export default function MainPage() {
       editRotation,
       deleteChore
     );
-
-    console.log("got here");
 
     setHouseIDList([...houseIDList]);
   };
@@ -250,16 +236,8 @@ export default function MainPage() {
 
     await UserDataService.getUser(currentUser.uid)
       .then(async (resp) => {
-        // if (JSON.stringify(resp.data) === "{}") {
-        //   await createUserData(
-        //     currentUser.uid,
-        //     currentUser.displayName,
-        //     currentUser.email
-        //   );
-        // } else {
         setUserData(resp.data.user);
         setHouseIDList(resp.data.user.houses);
-        // }
       })
 
       .catch((err) => {
@@ -273,8 +251,6 @@ export default function MainPage() {
 
   // Fetch houses on houseIDList change
   useEffect(async () => {
-    // console.log(houseIDList);
-    console.log("Triggered");
     let houseList = [];
     for (let i = 0; i < houseIDList.length; i++) {
       await HouseDataService.getHouse(houseIDList[i].houseID).then((resp) => {
@@ -282,16 +258,12 @@ export default function MainPage() {
       });
     }
 
-    console.log(houseList);
     setHouses(houseList);
   }, [houseIDList]);
 
   useEffect(async () => {
     // Fetch User
-    // console.log("happening");
     await fetchUserData();
-    // console.log("happening2");
-    // await fetchHouses();
   }, ["hello"]);
 
   const [collapseNav, setCollapseNav] = useState(false);

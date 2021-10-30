@@ -43,7 +43,6 @@ export default function UpdatePassword() {
 
     reauthenticate(currentUser.email, oldPassword.current.value)
       .then(() => {
-        console.log("got it");
 
         updatePassword(passwordRef.current.value)
           .then(() => {

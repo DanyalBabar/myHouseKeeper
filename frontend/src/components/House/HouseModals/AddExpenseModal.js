@@ -29,8 +29,6 @@ export default function AddExpenseModal(props) {
   }, [expenseDescription, expenseAmount, payee, payers]);
 
   const togglePayers = (member) => {
-    console.log(member);
-
     let tmpMembers = payers;
 
     if (tmpMembers.includes(member)) {
@@ -39,13 +37,6 @@ export default function AddExpenseModal(props) {
     } else {
       setPayers([...payers, member]);
     }
-
-    // if (tmpMembers.length === 0) {
-    //   setStartingAssignee({
-    //     name: "None",
-    //     email: "None@None.com",
-    //   });
-    // }
   };
 
   async function handleSubmit() {
@@ -57,7 +48,6 @@ export default function AddExpenseModal(props) {
     let payerList = payers;
 
     for (let i = 0; i < payerList.length; i++) {
-      console.log(payerList[i]);
       if (payerList[i].email === payee.email) {
         payerList.splice(i, 1);
         amount = amount - amount / divideAmount;
@@ -98,8 +88,6 @@ export default function AddExpenseModal(props) {
   };
 
   const onChangeAmount = (e) => {
-    // let expense = parseFloat((e.current.value).val(), 10).toFixed(2);
-    // setExpenseAmount(expense);
     let val = e.currentTarget.value;
     var re = /^([0-9]+[\.]?[0-9]?[0-9]?|[0-9]+)$/g;
     var re1 = /^([0-9]+[\.]?[0-9]?[0-9]?|[0-9]+)/g;
@@ -114,8 +102,6 @@ export default function AddExpenseModal(props) {
         setExpenseAmount("");
       }
     }
-
-    // setExpenseAmount(val);
   };
 
   useEffect(() => {

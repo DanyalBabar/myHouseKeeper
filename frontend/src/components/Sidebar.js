@@ -3,7 +3,6 @@ import { FaHome, FaHammer } from "react-icons/fa";
 import { BiLogOutCircle, BiMenu } from "react-icons/bi";
 import { useHistory } from "react-router-dom";
 import Button from "../components/Button";
-import Logo from "./Logo";
 import houseLogo from "../assets/logo_house.png";
 
 export default function Navbar(props) {
@@ -43,7 +42,6 @@ export default function Navbar(props) {
       }}
     >
       <div
-        // className="flex flex-row"
         style={{
           paddingRight: props.collapse ? "10px" : 0,
           marginRight: props.collapse ? "20px" : 0,

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import Button from "../Button";
 import { IoMdAddCircle } from "react-icons/io";
 import { IoPersonAdd } from "react-icons/io5";
@@ -92,7 +92,7 @@ export default function House(props) {
 
       <div className="flex flex-row bg-primary-600 rounded-lg items-center px-2 md:px-3 justify-between shadow-md">
         <div className="flex flex-row items-center">
-          <text className="font-title tracking-tight text-white text-lg mr-2">
+          <text className="font-title font-semibold text-white text-lg">
             {houseName}
           </text>
           <span
@@ -131,7 +131,7 @@ export default function House(props) {
           {/* HOUSEMATES */}
           <div className="bg-primary-300 backdrop-brightness-75 rounded-lg mb-3">
             <div className="flex flex-row bg-primary-600 rounded-lg items-center px-2 md:px-4 justify-between shadow-md">
-              <text className="font-title tracking-tight text-white text-lg">
+              <text className="font-title font-semibold text-white text-lg">
                 Housemates
               </text>
               <Button
@@ -167,7 +167,7 @@ export default function House(props) {
           {/* CHORES */}
           <div className="bg-primary-300 backdrop-brightness-75 rounded-lg mb-3">
             <div className="flex flex-row bg-primary-600 rounded-lg items-center px-2 md:px-4 justify-between shadow-md">
-              <text className="font-title tracking-tight text-white text-lg">
+              <text className="font-title font-semibold text-white text-lg">
                 Chores
               </text>
               <Button
@@ -207,7 +207,7 @@ export default function House(props) {
 
           <div className="bg-primary-300 backdrop-brightness-75 rounded-lg mb-3">
             <div className="flex flex-row bg-primary-600 rounded-lg items-center px-2 md:px-4 justify-between shadow-md">
-              <text className="font-title tracking-tight text-white text-lg">
+              <text className="font-title font-semibold text-white text-lg">
                 Expenses
               </text>
               <Button
