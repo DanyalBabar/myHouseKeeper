@@ -62,7 +62,7 @@ export default function Expense(props) {
       setDebt(calcDebt);
       setHasPaid(calcPaid);
     }
-  }, [props.expense]);
+  }, [props.expense, currentUser.email]);
 
   return (
     <div

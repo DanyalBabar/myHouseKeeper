@@ -50,7 +50,7 @@ export default function Chore(props) {
     }
 
     setChoreComplete(props.chore.completed);
-  }, [props.chore]);
+  }, [props.chore, currentUser.email, props.members]);
 
   return (
     <div

@@ -89,8 +89,8 @@ export default function AddExpenseModal(props) {
 
   const onChangeAmount = (e) => {
     let val = e.currentTarget.value;
-    var re = /^([0-9]+[\.]?[0-9]?[0-9]?|[0-9]+)$/g;
-    var re1 = /^([0-9]+[\.]?[0-9]?[0-9]?|[0-9]+)/g;
+    var re = /^([0-9]+[.]?[0-9]?[0-9]?|[0-9]+)$/g;
+    var re1 = /^([0-9]+[.]?[0-9]?[0-9]?|[0-9]+)/g;
 
     if (re.test(val)) {
       setExpenseAmount(val.toString());

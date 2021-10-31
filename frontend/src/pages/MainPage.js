@@ -1,26 +1,21 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { Card, Alert } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
-import { Link, useHistory } from "react-router-dom";
 import UserDataService from "../services/user.js";
 import HouseDataService from "../services/houses.js";
 
 import { useWindowDimensions } from "../utilities/WindowDimensions.js";
 import Sidebar from "../components/Sidebar";
-import Button from "../components/Button";
 import House from "../components/House/House.js";
 import JoinHouseModal from "../components/Modals/JoinHouseModal";
 import CreateHouseModal from "../components/Modals/CreateHouseModal";
-import LeaveHouseModal from "../components/House/HouseModals/LeaveHouseModal";
 import LoadOverlay from "../components/LoadOverlay";
 
 export default function MainPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState("");
 
-  const { height, width } = useWindowDimensions();
-  const history = useHistory();
+  const { width } = useWindowDimensions();
 
   const { currentUser, logout } = useAuth();
   const [userData, setUserData] = useState({});
@@ -39,7 +34,7 @@ export default function MainPage() {
 
       for (let i = 0; i < members.length; i++) {
         if (members[i].email === memberEmail) {
-          throw "You are already in this house";
+          throw Error("You are already in this house");
         }
       }
 
@@ -241,6 +236,7 @@ export default function MainPage() {
       })
 
       .catch((err) => {
+        setError(JSON.stringify(err));
         console.log(err);
       })
 
@@ -281,6 +277,7 @@ export default function MainPage() {
   return (
     <>
       {loading && <LoadOverlay />}
+
       <JoinHouseModal
         show={showJoinHouse}
         onHide={() => setShowJoinHouse(false)}
@@ -312,6 +309,10 @@ export default function MainPage() {
             width: collapseNav ? width - "50" : width - "300",
           }}
         >
+          <text className="font-regular text-red-500 text-md mb-8">
+            {error && error}
+          </text>
+
           {houses.length > 0 ? (
             houses.map((house) => {
               return (
@@ -344,7 +345,7 @@ export default function MainPage() {
               );
             })
           ) : (
-            <div className="bg-primary-600 rounded-md justify-center items-center text-center text-white p-4">
+            <div className="bg-primary-600 rounded-md justify-center items-center text-center text-white p-4 shadow-lg">
               <text className="font-title font-semibold text-xl">
                 You're homeless!
                 <br />
