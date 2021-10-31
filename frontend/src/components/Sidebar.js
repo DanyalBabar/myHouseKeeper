@@ -50,7 +50,7 @@ export default function Navbar(props) {
       >
         <div className="flex flex-col justify-between">
           <div className="flex flex-row items-center mb-2">
-            <img className="w-14" src={houseLogo} />
+            <img alt="logo" className="w-14" src={houseLogo} />
             <text
               className="font-title font-semibold text-black ml-3"
               style={{ fontSize: "1.56em" }}
@@ -79,7 +79,6 @@ export default function Navbar(props) {
           </Button>
 
           <Button
-            className="self-end"
             size="lg"
             type="primary"
             className={buttonStyles}

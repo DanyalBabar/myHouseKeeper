@@ -36,7 +36,7 @@ export default function ForgotPassword() {
       <div className="flex flex-col lg:flex-row justify-between items-center px-4 py-3 ">
         <div className="flex flex-row items-center mb-4 lg:mb-0">
           <button onClick={() => history.push("./")}>
-            <img className="w-16 xl:w-14" src={houseLogo} />
+            <img alt="logo" className="w-16 xl:w-14" src={houseLogo} />
           </button>
           <text className="font-title font-semibold text-black ml-3 text-3xl ">
             my<text className="text-primary-600">HouseKeeper</text>

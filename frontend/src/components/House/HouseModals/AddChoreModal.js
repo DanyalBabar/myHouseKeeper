@@ -68,6 +68,8 @@ export default function AddChoreModal(props) {
         return "30";
       case "Bi-monthly (60d)":
         return "60";
+      default:
+        return "1";
     }
   };
 
