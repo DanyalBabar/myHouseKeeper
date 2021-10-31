@@ -10,6 +10,7 @@ import House from "../components/House/House.js";
 import JoinHouseModal from "../components/Modals/JoinHouseModal";
 import CreateHouseModal from "../components/Modals/CreateHouseModal";
 import LoadOverlay from "../components/LoadOverlay";
+import { DateTime } from "luxon";
 
 export default function MainPage() {
   const [error, setError] = useState("");
@@ -123,6 +124,9 @@ export default function MainPage() {
     let completeChore = "false";
     let editRotation = "false";
     let deleteChore = "false";
+
+    const unsetTimestamp = chore.timestamp.substring(0, 10) + "T00:00:00+00:00";
+    chore.timestamp = new DateTime.fromISO(unsetTimestamp).toISO();
 
     await HouseDataService.modifyChores(
       houseID,

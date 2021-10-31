@@ -83,7 +83,7 @@ export default function House(props) {
         handleSubmit={(email) =>
           props.sendInvite(
             houseName,
-            `http://localhost:3000/signup?code=${houseCode}`,
+            `https://myhousekeeper.ca/signup?code=${houseCode}`,
             email
           )
         }

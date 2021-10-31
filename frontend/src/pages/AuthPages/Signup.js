@@ -142,20 +142,22 @@ export default function Signup() {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row justify-between items-center px-4 py-3 ">
-        <div className="flex flex-row items-center mb-4 lg:mb-0">
+      <div className="flex flex-col xl:flex-row justify-between items-center px-4 py-3 space-y-4 xl:space-y-0">
+        <div className="flex flex-row items-center ">
           <button onClick={() => history.push("./")}>
-            <img alt="Logo" className="w-16 xl:w-14" src={houseLogo} />
+            <img className="w-16 xl:w-14" src={houseLogo} />
           </button>
           <text className="font-title font-semibold text-black ml-3 text-3xl ">
             my<text className="text-primary-600">HouseKeeper</text>
           </text>
         </div>
 
-        <text className="font-title font-semibold text-3xl text-center self-start">
-          Housekeeping made
-          <text className="text-primary-600"> simple and managable</text>
-        </text>
+        <div className="text-center break-normal">
+          <text className="font-title font-semibold text-3xl ">
+            Housekeeping made
+            <text className="text-primary-600"> simple and manageable</text>
+          </text>
+        </div>
       </div>
 
       <div className="flex flex-col justify-center self-center items-center mt-8 lg:mt-0 mb-8">
@@ -230,7 +232,7 @@ export default function Signup() {
               </Button>
             </Form>
             <div className="font-regular w-100 text-center mt-2">
-              Already have an account? <Link to="/login">Log In</Link>
+              <Link to="/login">Already have an account? Log In</Link>
             </div>
           </Card.Body>
         </Card>

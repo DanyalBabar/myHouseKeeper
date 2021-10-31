@@ -51,7 +51,7 @@ export default function Login() {
         <div className="text-center break-normal">
           <text className="font-title font-semibold text-3xl ">
             Housekeeping made
-            <text className="text-primary-600"> simple and managable</text>
+            <text className="text-primary-600"> simple and manageable</text>
           </text>
         </div>
       </div>
@@ -156,7 +156,7 @@ export default function Login() {
                 <Link to="/forgot-password">Forgot password?</Link>
               </div>
               <div className="w-100 text-center mt-2 font-regular">
-                Need an account? <Link to="/signup">Sign Up</Link>
+                <Link to="/signup"> Need an account? Sign Up</Link>
               </div>
             </Card.Body>
           </Card>
@@ -164,21 +164,21 @@ export default function Login() {
       </div>
 
       <div className="px-4 w-full mb-8 mt-8 xl:mt-0">
-        <div class="text-center my-4 xl:mt-0">
+        <div class="text-center space-y-8 xl:space-y-0">
           <text className="font-title font-semibold text-3xl">
             Getting started is
             <text className="text-primary-600"> easy</text>
           </text>
         </div>
 
-        <div className="flex flex-col xl:flex-row items-center xl:items-start xl:justify-between">
+        <div className="flex flex-col xl:flex-row items-center xl:items-start lg:justify-between xl:justify-between 2xl:justify-evenly space-x-4">
           {/* CREATE */}
-          <div className="flex flex-col xl:flex-row items-center my-4 xl:my-0 ">
-            <div className="font-title font-bold text-2xl text-white rounded-lg py-2 px-3 w-80 xl:w-min h-12 text-center bg-primary-600 xl:mr-4 xl:self-start xl:mt-8">
+          <div className="flex flex-col xl:flex-row my-4 xl:my-0 space-y-8 xl:space-y-0">
+            <div className="font-title font-bold text-2xl text-white rounded-lg py-2 px-3 w-80 xl:w-min h-12 text-center bg-primary-600 xl:mr-4 xl:self-start ">
               <text>1</text>
             </div>
 
-            <div className="flex flex-col w-80 xl:w-96 h-50 rounded-lg bg-white border-gray-200 border shadow-md py-4 px-4 mt-8">
+            <div className="flex flex-col w-80 xl:w-96 h-50 rounded-lg bg-white border-gray-200 border shadow-md p-4">
               <text className="font-title font-semibold text-xl ml-1 mb-3">
                 Create a <text className="text-primary-600">house</text>
               </text>
@@ -208,11 +208,11 @@ export default function Login() {
           </div>
 
           {/* INVITE */}
-          <div className="flex flex-col xl:flex-row items-center my-4 xl:my-0">
-            <div className="font-title font-bold text-2xl text-white rounded-lg py-2 px-3 w-80 xl:w-min h-12 text-center bg-primary-600 xl:mr-4 xl:self-start xl:mt-8">
+          <div className="flex flex-col xl:flex-row my-4 xl:my-0 space-y-8 xl:space-y-0">
+            <div className="font-title font-bold text-2xl text-white rounded-lg py-2 px-3 w-80 xl:w-min h-12 text-center bg-primary-600 xl:mr-4 xl:self-start ">
               <text>2</text>
             </div>
-            <div className="flex flex-col w-80 h-80 xl:w-96 rounded-lg bg-white border-gray-200 border shadow-md p-4 m-4 mt-8">
+            <div className="flex flex-col w-80 h-80 xl:w-96 rounded-lg bg-white border-gray-200 border shadow-md p-4">
               <text className="font-title font-semibold text-xl ml-1 mb-3">
                 <text className="text-primary-600">Invite</text> your housemates
               </text>
@@ -259,11 +259,11 @@ export default function Login() {
           </div>
 
           {/* TRACK */}
-          <div className="flex flex-col xl:flex-row items-center my-4 xl:my-0">
-            <div className="font-title font-bold text-2xl text-white rounded-lg py-2 px-3 w-80 xl:w-min h-12 text-center bg-primary-600 xl:mr-4 xl:self-start xl:mt-8">
+          <div className="flex flex-col xl:flex-row my-4 xl:my-0 space-y-8 xl:space-y-0">
+            <div className="font-title font-bold text-2xl text-white rounded-lg py-2 px-3 w-80 xl:w-min h-12 text-center bg-primary-600 xl:mr-4 xl:self-start ">
               <text>3</text>
             </div>
-            <div className="flex flex-col w-80 xl:w-full rounded-lg bg-white border-gray-200 border shadow-md p-4 my-4 mt-8">
+            <div className="flex flex-col w-80 xl:w-full rounded-lg bg-white border-gray-200 border shadow-md p-4">
               <text className="font-title font-semibold text-xl ml-1 mb-3">
                 Start <text className="text-primary-600">housekeeping</text>
               </text>
