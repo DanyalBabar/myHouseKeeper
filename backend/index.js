@@ -6,7 +6,8 @@ import housesDAO from "./dao/housesDAO.js";
 
 dotenv.config();
 const MongoClient = mongodb.MongoClient;
-const port = process.env.PORT || 5000;
+// const port = process.env.PORT || 5000;
+const port = 80;
 
 MongoClient.connect(process.env.DB_URI, {
   poolSize: 50,
